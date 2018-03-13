@@ -6,17 +6,23 @@ import { SharedModuleModule } from './shared-module/shared-module.module';
 import { Util } from './shared-module/Utilitarios/Util';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import { Interceptor } from './Interceptor';
+import { PaginaNaoEncontradaModuleModule } from './pagina-nao-encontrada-module/pagina-nao-encontrada-module.module';
+import { RoutingModule } from './app.routing';
+import { TesterComponent } from './tester/tester.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TesterComponent
   ],
   imports: [
     BrowserModule,
     SegurancaModuleModule,
-    SharedModuleModule
+    SharedModuleModule, 
+    PaginaNaoEncontradaModuleModule,
+    RoutingModule
   ],
-  providers: [Util,{provide: HTTP_INTERCEPTORS,useClass:Interceptor, multi:true}],
+  providers: [{provide: HTTP_INTERCEPTORS,useClass:Interceptor, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

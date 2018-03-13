@@ -1,16 +1,20 @@
+import { RouterModule, Routes } from "@angular/router";
+import { ModuleWithProviders, NgModule } from "@angular/core";
+import { NotFoundComponent } from "./pagina-nao-encontrada-module/not-found/not-found.component";
+import { TesterComponent } from "./tester/tester.component";
 
 const APP_ROUTES : Routes = [
-        { path :'viewchild'  , component:ViewchildComponent },
-        { path :'404Curse'  , component:CursoNaoEncontradoComponent
-         },
-
-        { path :'login'  , component:LoginComponent },
-        { path :''  , component:HomeComponent , canActivate:[AuthGuardService] },
-        { path :'endereco'  ,  component:EnderecosComponent , canActivate:[AuthGuardService] },
-        { path : 'cursos' , component: CursosComponent , canActivate:[AuthGuardService] },
-        { path : 'cursos/:id' , component: CursosDetalheComponent , canActivate:[AuthGuardService] },
-        {path:'**'  , component:CursoNaoEncontradoComponent }
+        {path:'teste'  , component:TesterComponent },
+        {path:'**'  , component:NotFoundComponent }
 ]; 
-export const routing:ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
+@NgModule({
+        imports:[RouterModule.forRoot(APP_ROUTES)],
+        exports:[RouterModule]
+    })
+ export class RoutingModule{
+
+    
+}
+
 
 //, canActivate:[AuthGuardService]

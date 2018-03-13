@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Util } from './shared-module/Utilitarios/Util';
+//import { Util } from './shared-module/Utilitarios/Util';
 
 
 @Component({
@@ -11,12 +11,12 @@ import { Util } from './shared-module/Utilitarios/Util';
 export class AppComponent implements OnInit {
   ngOnInit(){
    
-    console.log( this.shared.Soma(1,2));
+   // console.log( this.shared.Soma(1,2));
 
   }
   title = 'projeto-confitec';
 
-  constructor(private shared:Util){
+  constructor(){
 
 
   }
