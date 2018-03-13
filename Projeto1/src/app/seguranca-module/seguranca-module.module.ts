@@ -5,7 +5,7 @@ import { UsuarioRoutingModule } from './usuario-routing-module';
 import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.component';
 import { UsuarioNovoComponent } from './usuario-novo/usuario-novo.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Interceptor } from '../Interceptor';
+
 
 @NgModule({
   imports: [
@@ -13,6 +13,7 @@ import { Interceptor } from '../Interceptor';
     UsuarioRoutingModule
   ],
   declarations: [UsuarioListaComponent, UsuarioDetalheComponent, UsuarioNovoComponent],
-  providers:[{provide: HTTP_INTERCEPTORS,useClass:Interceptor, multi:true}]
+  providers:[],
+  exports:[UsuarioDetalheComponent]
 })
 export class SegurancaModuleModule { }
